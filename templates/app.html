@@ -8,25 +8,25 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">Gestión de Usuarios</h1>
+        <h1 class="text-center">Registro de alumnos en Extraordinario</h1>
         <form action="/usuarios/guardar" method="POST" class="mb-4">
             <div class="mb-3">
-                <label for="txtUsuario" class="form-label">Usuario</label>
+                <label for="txtUsuario" class="form-label">Alumno</label>
                 <input type="text" class="form-control" id="txtUsuario" name="txtUsuario" required>
             </div>
             <div class="mb-3">
-                <label for="txtContrasena" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="txtContrasena" name="txtContrasena" required>
+                <label for="txtContrasena" class="form-label">Matricula</label>
+                <input type="number" class="form-control" id="txtContrasena" name="txtContrasena" required>
             </div>
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary">Registrar</button>
         </form>
 
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Usuario</th>
-                    <th>Contraseña</th>
+                    <th>Alumno</th>
+                    <th>Matricula</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -46,16 +46,16 @@
                                 <div class="modal-content">
                                     <form action="/usuarios/actualizar/{{ usuario[0] }}" method="POST">
                                         <div class="modal-header">
-                                            <h5 class="modal-title">Editar Usuario</h5>
+                                            <h5 class="modal-title">Editar Alumno</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                         </div>
                                         <div class="modal-body">
                                             <div class="mb-3">
-                                                <label for="txtUsuario" class="form-label">Usuario</label>
+                                                <label for="txtUsuario" class="form-label">Alumno</label>
                                                 <input type="text" class="form-control" name="txtUsuario" value="{{ usuario[1] }}" required>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="txtContrasena" class="form-label">Contraseña</label>
+                                                <label for="txtContrasena" class="form-label">Matricula</label>
                                                 <input type="password" class="form-control" name="txtContrasena" value="{{ usuario[2] }}" required>
                                             </div>
                                         </div>
